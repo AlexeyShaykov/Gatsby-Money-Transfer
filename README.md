@@ -6,9 +6,7 @@
   Gatsby money transit
 </h1>
 
-## 💫 Demo
-
-[![Demo Deployed by Netlify](https://demo.symphonyonline.co.uk/assets/images/symphony-demo-logo.png)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+[![Demo Deployed by Netlify](https://demo.symphonyonline.co.uk/assets/images/symphony-demo-logo.png)](https://gatsby-money-transit.netlify.com/)
 
 ## 🚀 Quick start
 
