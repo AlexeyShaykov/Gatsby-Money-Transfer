@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{ABaI:function(e,a,t){"use strict";t.r(a);var n=t("q1tI"),r=t.n(n),l=t("Wbzz"),o=t("Bl7J"),c=t("JMMV");a.default=function(e){var a=e.pageContext.data;return r.a.createElement(o.a,null,r.a.createElement(r.a.Fragment,null,r.a.createElement(l.Link,{to:"/"},"to Home"),r.a.createElement(c.a,a)))}}}]);
+//# sourceMappingURL=component---src-components-card-details-js-4b339c9d5d2bd7a696f3.js.map

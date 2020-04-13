@@ -8,7 +8,7 @@
 
 ## 💫 Demo
 
-[![Demo Deployed by Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+[![Demo Deployed by Netlify](https://demo.symphonyonline.co.uk/assets/images/symphony-demo-logo.png)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
 ## 🚀 Quick start
 
