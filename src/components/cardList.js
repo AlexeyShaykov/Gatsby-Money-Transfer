@@ -14,7 +14,6 @@ const PostList = styled(List)({
 });
 
 const CardList = props => {
-  console.log(props);
   const findAuthor = id => props.authors.filter(author => author.id === id)
   return (
     <>

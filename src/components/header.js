@@ -1,5 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+
+import { ThemeContext } from '../../plugins/gatsby-plugin-top-layout/TopLayout';
 
 import {
   Typography,
@@ -20,6 +26,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const Header = ({ siteTitle }) => {
+  const { light, toggle } = useContext(ThemeContext);
   const classes = useStyles();
   const { header, textHeader } = classes;
   return (
@@ -32,6 +39,19 @@ const Header = ({ siteTitle }) => {
           {siteTitle}
         </Typography>
       </Box>
+      <FormGroup row>
+        <FormControlLabel
+            control={
+              <Switch
+                checked={light}
+                onChange={toggle}
+                color="secondary"
+              />
+            }
+            label="Light"
+            className={textHeader}
+        />
+      </FormGroup>
     </header>
   )
 } 

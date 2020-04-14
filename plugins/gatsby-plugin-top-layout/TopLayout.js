@@ -1,14 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useState }  from 'react';
+import PropTypes from 'prop-types';
 
-import { Helmet } from 'react-helmet'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { Helmet } from 'react-helmet';
+import { ThemeProvider } from '@material-ui/core/styles';
 
-import CssBaseline from '@material-ui/core/CssBaseline'
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-import theme from '../../src/components/constants/theme'
+import theme from '../../src/components/constants/theme';
+
+export const ThemeContext = React.createContext({
+  light: false,
+  toggle: () => {},
+});
 
 export default function TopLayout(props) {
+  const [light, setLight] = useState(false);
+  const toggle = () => {
+    setLight(!light);
+  };
   return (
     <>
       <Helmet>
@@ -18,11 +27,17 @@ export default function TopLayout(props) {
           rel="stylesheet"
         />
       </Helmet>
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        {props.children}
-      </ThemeProvider>
+      <ThemeContext.Provider value={{
+        light,
+        toggle,
+      }}>
+        <ThemeProvider theme={theme}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          {props.children}
+        </ThemeProvider>
+      </ThemeContext.Provider>
+      
     </>
   );
 }

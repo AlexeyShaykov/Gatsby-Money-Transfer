@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import {
@@ -11,6 +11,7 @@ import {
   ListItem,
 } from '@material-ui/core';
 import FlagIcon from '@material-ui/icons/Flag';
+import { ThemeContext } from '../../plugins/gatsby-plugin-top-layout/TopLayout';
 
 import theme from './constants/theme';
 import TagLink from './tagLink';
@@ -46,6 +47,7 @@ const useStyles = makeStyles(props => ({
 
 function CardNews(props) {
   const { title, slug, date, image, tags, index = 0, author, featured = false } = props;
+  const { light } = useContext(ThemeContext);
  const { name, email } = author[0].fields;
   const classes = useStyles({ index, theme });
   const { card, media, link, item, icon } = classes;
@@ -69,7 +71,7 @@ function CardNews(props) {
               </Typography>
               { tags &&
                 <Box display='flex' mt={2}>
-                  { tags.map(tag => <TagLink green="true" key={tag} to={`/tag/${tag}`}>{tag}</TagLink>) }
+                  { tags.map(tag => <TagLink light={light ? 1 : 0} green="true" key={tag} to={`/tag/${tag}`}>{tag}</TagLink>) }
                 </Box>
               }
             </CardContent>
