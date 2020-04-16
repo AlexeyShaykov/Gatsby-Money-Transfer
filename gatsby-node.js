@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `category/${category}`,
       component: path.resolve(`./src/components/statusPage.js`),
       context: {
-        data: results.filter(result => result.fields.category === category),
+        posts: results.filter(result => result.fields.category === category),
         authors: authors,
       },
     })
@@ -62,7 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `tag/${tag}`,
       component: path.resolve(`./src/components/statusPage.js`),
       context: {
-        data: results.filter(result => result.fields.tags && (result.fields.tags.includes(tag))),
+        posts: results.filter(result => result.fields.tags && (result.fields.tags.includes(tag))),
         authors: authors,
       },
     })

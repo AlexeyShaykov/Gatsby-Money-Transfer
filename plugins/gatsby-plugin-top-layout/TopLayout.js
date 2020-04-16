@@ -10,13 +10,22 @@ import theme from '../../src/components/constants/theme';
 
 export const ThemeContext = React.createContext({
   light: false,
-  toggle: () => {},
+  toggle: () => {}
+});
+
+export const DataContext = React.createContext({
+  data: {},
+  setData: () => {},
 });
 
 export default function TopLayout(props) {
   const [light, setLight] = useState(false);
   const toggle = () => {
     setLight(!light);
+  };
+  const [data, setDataHandler] = useState({});
+  const setData = (data) => {
+    setDataHandler(data);
   };
   return (
     <>
@@ -27,17 +36,21 @@ export default function TopLayout(props) {
           rel="stylesheet"
         />
       </Helmet>
-      <ThemeContext.Provider value={{
-        light,
-        toggle,
+      <DataContext.Provider value={{
+        data,
+        setData,
       }}>
-        <ThemeProvider theme={theme}>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          {props.children}
-        </ThemeProvider>
-      </ThemeContext.Provider>
-      
+          <ThemeContext.Provider value={{
+              light,
+              toggle,
+            }}>
+            <ThemeProvider theme={theme}>
+                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+              <CssBaseline />
+              {props.children}
+            </ThemeProvider>
+          </ThemeContext.Provider>
+      </DataContext.Provider>
     </>
   );
 }

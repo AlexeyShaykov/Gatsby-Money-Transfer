@@ -7,7 +7,7 @@ import theme from './constants/theme';
 const TagLink = styled(Link)({
   display: 'block',
   padding: theme.spacing(2),
-  'background-color': props => props.green ? props.light ? theme.palette.secondary.light : theme.palette.secondary.main : props.light ? theme.palette.primary.light : 'rebeccapurple',
+  'background-color': props => props.light ? theme.palette.primary.light : theme.palette.primary.main,
   color: '#fff',
   'text-decoration': 'none',
   'margin-right': theme.spacing(2),
